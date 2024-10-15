@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor PNG para WebP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Conversor de Imagens PNG para WebP</h1>
+
+      <!-- Formulário para upload de pasta/arquivos -->
+      <form
+        id="uploadForm"
+        action="/upload"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <label for="formFile" class="form-label"
+            >Selecione a pasta com as imagens</label
+          >
+          <input
+            class="form-control"
+            type="file"
+            name="images"
+            id="formFile"
+            multiple
+            webkitdirectory
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Fazer Upload</button>
+      </form>
+
+      <!-- Mensagem de sucesso/erro -->
+      <div id="message" class="mt-3"></div>
+    </div>
+
+    <script>
+      const form = document.getElementById("uploadForm");
+      const message = document.getElementById("message");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        // Verificação simples para garantir que arquivos foram selecionados
+        const input = document.getElementById("formFile");
+        if (input.files.length === 0) {
+          message.textContent =
+            "Por favor, selecione ao menos um arquivo ou pasta.";
+          message.classList.remove("alert-success");
+          message.classList.add("alert", "alert-danger");
+          return;
+        }
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch("/upload", {
+            method: "POST",
+            body: formData,
+          });
+
+          if (response.ok) {
+            const convertedFiles = await response.json();
+            message.classList.remove("alert-danger");
+            message.classList.add("alert", "alert-success");
+            message.innerHTML = "Imagens convertidas com sucesso! <br>";
+
+            console.log(convertedFiles);
+
+            // Adiciona links para download
+            convertedFiles.forEach((file) => {
+              const link = document.createElement("a");
+              link.href = `/downloads/${file}`; // Link para download
+              link.textContent = `Download ${file}`;
+              link.classList.add("btn", "btn-link");
+              link.target = "_blank"; // Abre o download em nova aba
+              message.appendChild(link);
+              message.appendChild(document.createElement("br")); // Quebra de linha
+            });
+          } else {
+            throw new Error("Erro na resposta do servidor");
+          }
+        } catch (error) {
+          message.textContent = "Erro ao fazer upload das imagens.";
+          message.classList.remove("alert-success");
+          message.classList.add("alert", "alert-danger");
+        }
+      });
+    </script>
+  </body>
+</html>
