@@ -4,21 +4,21 @@
 
 Este é um conversor simples de imagens que permite o upload de arquivos PNG e a conversão deles para o formato WebP. O aplicativo utiliza [Express](https://expressjs.com/) como framework backend e [Sharp](https://sharp.pixelplumbing.com/) para a conversão de imagens.
 
-## Funcionalidades
+## ✨ Funcionalidades
 
-- Upload de múltiplos arquivos PNG ou uma pasta.
-- Conversão automática de imagens PNG para WebP.
-- Links para download dos arquivos convertidos.
+- 📤 Upload de múltiplos arquivos PNG em uma pasta.
+- 🔄 Conversão automática de imagens PNG para WebP.
+- 🔗 Links para download dos arquivos convertidos.
 
-## Tecnologias Usadas
+## 🛠️ Tecnologias Usadas
 
-- [Node.js](https://nodejs.org/) - Ambiente de execução JavaScript.
-- [Express](https://expressjs.com/) - Framework web para Node.js.
-- [Multer](https://github.com/expressjs/multer) - Middleware para manipulação de uploads de arquivos.
-- [Sharp](https://sharp.pixelplumbing.com/) - Biblioteca para processamento de imagens.
-- [Bootstrap](https://getbootstrap.com/) - Framework CSS para estilização do frontend.
+- 🟢 [Node.js](https://nodejs.org/) - Ambiente de execução JavaScript.
+- 🚀 [Express](https://expressjs.com/) - Framework web para Node.js.
+- 📦 [Multer](https://github.com/expressjs/multer) - Middleware para manipulação de uploads de arquivos.
+- 🖼️ [Sharp](https://sharp.pixelplumbing.com/) - Biblioteca para processamento de imagens.
+- 🎨 [Bootstrap](https://getbootstrap.com/) - Framework CSS para estilização do frontend.
 
-## Instalação
+## 📥 Instalação
 
 Siga os passos abaixo para instalar e executar o projeto localmente.
 
@@ -39,7 +39,7 @@ Siga os passos abaixo para instalar e executar o projeto localmente.
    ```bash
    npm install
    ```
-## Uso
+## ▶️ Uso
 
 1. **Inicie o servidor:**
 
@@ -54,11 +54,11 @@ Siga os passos abaixo para instalar e executar o projeto localmente.
    ```
 3. **Use o formulário para fazer upload de arquivos PNG ou uma pasta. Após o upload, os arquivos serão convertidos para WebP e links para download serão exibidos.**
 
-## Como Contribuir
+## 🤝 Como Contribuir
 
 Se você deseja contribuir para este projeto, siga estas etapas:
 
-1. **Faça um fork do repositório.:**
+1. ** 🔀 Faça um fork do repositório.:**
 
 2. **Crie uma nova branch para suas alterações**
   ```bash
@@ -77,16 +77,17 @@ Se você deseja contribuir para este projeto, siga estas etapas:
    ```
 5. **Crie uma pull request.**
 
-## Licença
+## 📜 Licença
 
 Este projeto foi feito sob a licença [MIT](https://github.com/LexLuthorDev/conversor-png-webp/blob/main/LICENSE). Sinta-se à vontade para utilizar, modificar e distribuir o código.
 
-## Desenvolvedor
+## 🧑‍💻 Desenvolvedor
 
-- Email: lexluthordevfull@gmail.com
+- 📧 Email: lexluthordevfull@gmail.com
 
-- Developed with ❤️ by @lexluthor
+- 🖤 Developed with ❤️ by @lexluthor
 
-- Doação: https://github.com/sponsors/LexLuthorDev
+- ☕ Doação: https://github.com/sponsors/LexLuthorDev
 
-Happy coding! 👨🏻‍💻👩‍💻
+LexLuthorDev
+🚀  Happy coding! 👨🏻‍💻👩‍💻
