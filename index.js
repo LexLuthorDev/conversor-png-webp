@@ -5,7 +5,7 @@ const path = require('path');
 const sharp = require('sharp');
 
 const app = express();
-const port = 3001;
+const port = 3000;
 
 // Rota para servir os arquivos convertidos
 app.use('/downloads', express.static(path.join(__dirname, 'converted')));
